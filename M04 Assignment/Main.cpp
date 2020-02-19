@@ -1,11 +1,11 @@
-#include "Matrices-3.h"
+#include "Matrices.h"
 #include "../std_lib_facilities"
 
 int main()
 {
   try
   {
-    Matrix alpha(){0,0};   //constructing a maxtrix and intializing it's elements to zero
+    Matrix alpha();   //constructing a maxtrix and intializing it's elements to zero
 
     return 0;
   }
