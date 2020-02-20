@@ -7,7 +7,7 @@
 //an error
 double Matrices::operator+(const Matrix& a, const Matrix& b)
 {
-Matrix sum(a.getRows(),a.getCols())
+Matrix sum(a.getRows(),a.getCols());
   try
   {
     if(a.getRows()!= b.getRows()) {error("Matrices must have equal number of rows!\n");}
