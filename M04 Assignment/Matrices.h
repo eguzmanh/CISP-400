@@ -45,11 +45,11 @@ namespace Matrices
 
     ///Add each corresponding element.
     ///usage:  c = a + b;
-    Matrix operator+(const Matrix& a, const Matrix& b);
+    double Matrix operator+(const Matrix& a, const Matrix& b);
 
     ///Matrix multiply.  See description.
     ///usage:  c = a * b;
-    Matrix operator*(const Matrix& a, const Matrix& b);
+    double Matrix operator*(const Matrix& a, const Matrix& b);
 
     ///Matrix comparison.  See description.
     ///usage:  a == b

@@ -13,9 +13,9 @@ Matrix sum(a.getRows(),a.getCols())
     if(a.getRows()!= b.getRows()) {error("Matrices must have equal number of rows!\n");}
     if(a.getCols()!= b.getCols()) {error("Matrices must have equal number of columns!\n");}
 
-    for(int r =0; r < a.getRows; r++)
+    for(int r =0; r < a.getRows(); r++)
     {
-      for(int c =0; c < a.getCols; c++)
+      for(int c =0; c < a.getCols(); c++)
       {
         sum.operator(r,c)= a.operator(r,c) + b.operator(r,c);
       }
@@ -41,7 +41,7 @@ Matrix sum(a.getRows(),a.getCols())
 //create a running sum when the j loops is finished store in c(i,k)
 //if the number of columns and rows in a and b dont match throw and error
 //construct a local matrix to store the result and return it.
-double Matrices::operator*()
+double Matrices::operator*(const Matrix& a, const Matrix& b)
 {
  Matrix product(a.getRows(),a.getCols());
  int n = a.size();
@@ -60,9 +60,9 @@ double Matrices::operator*()
 //if any element (i,j) doesnt match return false otherwise return true
 bool Matrices::operator==(const Matrix& a, const Matrix& b)
 {
-  if(a.getRows!=b.getRows) {error("Matrices must have the same number of rows!\n"); return false;}
+  if(a.getRows()!=b.getRows()) {error("Matrices must have the same number of rows!\n"); return false;}
 
-  if(a.getCols!=b.getCols)
+  if(a.getCols()!=b.getCols())
   {error("Matrices must have the same number of columns!\n"); return false;}
 
   else return true;
@@ -72,12 +72,12 @@ bool Matrices::operator==(const Matrix& a, const Matrix& b)
 
 
 //opposite of ==operator
-bool Matrices::operator!=()
+bool Matrices::operator!=(const Matrix& a, const Matrix& b)
 {
-  if(a.getRows==b.getRows)
+  if(a.getRows()==b.getRows())
   {return false;}
 
-  if(a.getCols==b.getCols)
+  if(a.getCols()==b.getCols())
   {return false;}
 
   else return true;
@@ -85,7 +85,7 @@ bool Matrices::operator!=()
 
 
 //Output operator will out put matrices in the format with columns separated by ' ' and rows by '\n' you can specify the width of your columns useing setw from <iomanip>
-void Matrices::operator<<()
+void Matrices::operator<<(ostream& os, const Matrix& a)
 {
   setw(11);
   cout << "a:\n";
